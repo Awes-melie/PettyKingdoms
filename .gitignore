@@ -1,0 +1,8 @@
+# Compiled class file
+*.class
+
+#Save file
+*.txt
+
+# Log file
+*.log

@@ -10,7 +10,8 @@ public class WorldState implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    static String title;
+    private String title;
+    private Location locations;
 
     public String getTitle() {
         return title;
@@ -21,15 +22,15 @@ public class WorldState implements Serializable {
     }
 
     public void main(String[] args){
-        WorldState world = WorldState.generateWorld();
+        WorldState world = WorldState.generateNewWorld();
         System.out.println(world.toString());
     }
 
     public String toString(){
-        return "";
+        return "title: " + this.getTitle();
     }
 
-    public static WorldState generateWorld() {
+    public static WorldState generateNewWorld() {
         WorldState world = new WorldState();
         return world;
     }
