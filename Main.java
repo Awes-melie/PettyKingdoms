@@ -7,7 +7,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 
-public class Interface {
+public class Main {
 
     static BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
 

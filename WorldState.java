@@ -6,12 +6,20 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
+import java.util.Random;
+import java.util.ArrayDeque;
+import java.util.Queue;
 public class WorldState implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     private String title;
-    private Location locations;
+    private Location[] locations;
+
+    //WORLDGENCONSTS
+    private static int NUMBER_OF_LOCATIONS = 10;
+    private static int NUMBER_OF_EDGES = 15;
+    //WORLDGENCONSTS
 
     public String getTitle() {
         return title;
@@ -32,6 +40,15 @@ public class WorldState implements Serializable {
 
     public static WorldState generateNewWorld() {
         WorldState world = new WorldState();
+        Random generator = new Random();
+        
+        Queue<Location> unlinkedBorders = new ArrayDeque<Location>();
+
+        for (int i = 0; i < NUMBER_OF_LOCATIONS; i++) {
+            unlinkedBorders.add(new Location("i", TerrainType.PLAINS, new Location[0]));
+        }
+        while (!unlinkedBorders.isEmpty()){            
+        }
         return world;
     }
 
